@@ -23,33 +23,39 @@ public class SocketCliente {
 		Scanner sc = new Scanner(System.in);
 		
 		InetSocketAddress direccionServidor = new InetSocketAddress(IP_SERVER, PUERTO);
-		
+		boolean est = true;
 		try {
 			socketCliente = new Socket();
 			socketCliente.connect(direccionServidor);
 			System.out.println("Conexion establecida... a " + IP_SERVER + " por el puerto "
 					+ PUERTO);
-			
+			while (est) {
 			entrada = new InputStreamReader(socketCliente.getInputStream());
 			salida = new PrintStream(socketCliente.getOutputStream());
 			
 			
-			System.out.println("CLIENTE: Introduzca los numeros a: 1.sumar 2.restar 3.multiplicar 4.dividir");
-			String numero1 = sc.nextLine();
-			String numero2 = sc.nextLine();
-			String operacion = sc.nextLine();
+				System.out.println("CLIENTE: Introduzca los numeros a: 1.sumar 2.restar 3.multiplicar 4.dividir");
+				String numero1 = sc.nextLine();
+				String numero2 = sc.nextLine();
+				String operacion = sc.nextLine();
+				
+				String operandos = numero1 + "-" + numero2 + "-" + operacion;
+				salida.println(operandos);
+				BufferedReader bf = new BufferedReader(entrada);
+				String resultado = bf.readLine();
+				
+				System.out.println("CLIENTE: " + resultado);
+				
+				System.out.println("CLIENTE: Desea hacer otra operacion?");
+				
+				String res = sc.nextLine();
+				entrada = new InputStreamReader(socketCliente.getInputStream());
+				salida.println(res);
+				if (res.equalsIgnoreCase("no")) {
+					est = false;
+				}
+			}
 			
-			String operandos = numero1 + "-" + numero2 + "-" + operacion;
-			salida.println(operandos);
-			BufferedReader bf = new BufferedReader(entrada);
-			String resultado = bf.readLine();
-			
-			System.out.println("CLIENTE: " + resultado);
-			
-			System.out.println("CLIENTE: Desea hacer otra operacion?");
-			entrada = new InputStreamReader(socketCliente.getInputStream());
-			String res = sc.nextLine();
-			salida.println(res);
 			
 		} catch (Exception e) {
 			System.err.println("Error: " + e);

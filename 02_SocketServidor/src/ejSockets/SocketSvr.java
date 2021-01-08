@@ -27,14 +27,17 @@ public class SocketSvr {
 		Socket socketConexion = null;
 		PrintStream salida = null;
 		InputStreamReader entrada = null;
-		Boolean cont = true;
+		boolean cont = true;
 		int estado = 0;
+		String res = null;
 		try {
+			res = "";
 			servidorSocket = new ServerSocket();
 			InetSocketAddress direccion = new InetSocketAddress(IP_SERVER, PUERTO);
 			servidorSocket.bind(direccion);
 
 			while (cont) {
+				 res = "";
 				if (estado == 0) {
 
 					System.out.println("SERVIDOR: Esperando peticion...");
@@ -52,7 +55,6 @@ public class SocketSvr {
 					int iNumero2 = Integer.parseInt(operadores[1]);
 					int ioperacion = Integer.parseInt(operadores[2]);
 					int resultado = 0;
-					String res = "";
 
 					switch (ioperacion) {
 					case SUMA:
@@ -79,17 +81,22 @@ public class SocketSvr {
 				} else {
 
 					System.out.println("SERVIDOR: Esperando respuesta...");
-					socketConexion = servidorSocket.accept();
 					entrada = new InputStreamReader(socketConexion.getInputStream());
 					BufferedReader bf2 = new BufferedReader(entrada);
 
 					String stringRecibido2 = bf2.readLine();
 
 					System.out.println("SERVIDOR: Me ha llegado del cliente: " + stringRecibido2);
+					salida = new PrintStream(socketConexion.getOutputStream());
 
 					if (stringRecibido2.equalsIgnoreCase("no")) {
 						cont = false;
-						
+						res = "No desea hacer mas operacion";
+						salida.println(res);
+					} else {
+						res = "Otra operacion que desee";
+						estado = 0;
+						salida.println(res);
 					}
 				}
 			}
