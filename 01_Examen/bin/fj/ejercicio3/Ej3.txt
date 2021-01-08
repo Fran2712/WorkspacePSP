@@ -1,0 +1,2 @@
+Es correcta, cuando pones la palabra reservada "Synchronized" en la firma de un metodo haces que solo pueda ejecutar
+ese metodo un objeto a la vez. 
