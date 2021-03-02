@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
-<aop-project name="02_SpringRestConcesionario"/>
-<aop-project name="99_JPADataSs"/>
+<aop-project name="02_EjercicioRestConcesionario"/>
+<aop-project name="02_EjercicioRestBasico"/>
+<aop-project name="02_SpringRestBasico"/>
 <aop-project name="02_SpringRestPersonas"/>
-<aop-project name="02_SpringRest"/>
-<aop-project name="02_SringRestEjercicio"/>
+<aop-project name="99_JPADataSs"/>
+<aop-project name="02_EjercicioCriptografia"/>
 <aop-project name="99_JPADataSs_Relaciones"/>
 </aop-reference-model>

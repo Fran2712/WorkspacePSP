@@ -1,14 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-    <fullyQualifiedTypeName name="fj.ejercicio2.Trabajador"/>
-    <fullyQualifiedTypeName name="java.lang.Runnable"/>
-    <fullyQualifiedTypeName name="fj.ejercicio2.Programador"/>
-    <fullyQualifiedTypeName name="fj.ejercicio2.JefeProyecto"/>
-    <fullyQualifiedTypeName name="fj.ejercicio2.Director"/>
-    <fullyQualifiedTypeName name="javax.swing.text.AbstractDocument.Content"/>
-    <fullyQualifiedTypeName name="org.springframework.context.ApplicationContext"/>
-    <fullyQualifiedTypeName name="example.modelo.repositorio.DaoPelicula"/>
-    <fullyQualifiedTypeName name="example.modelo.entidad.Pelicula"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Component"/>
     <fullyQualifiedTypeName name="org.springframework.context.annotation.Scope"/>
     <fullyQualifiedTypeName name="javax.persistence.OneToMany"/>
@@ -60,4 +51,13 @@
     <fullyQualifiedTypeName name="com.restconcesionario.controlador.ControladorCoche"/>
     <fullyQualifiedTypeName name="org.springframework.stereotype.Service"/>
     <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.RestController"/>
+    <fullyQualifiedTypeName name="java.util.Scanner"/>
+    <fullyQualifiedTypeName name="java.nio.file.ReadOnlyFileSystemException"/>
+    <fullyQualifiedTypeName name="javax.swing.text.StringContent"/>
+    <fullyQualifiedTypeName name="java.util.concurrent.atomic.AtomicIntegerFieldUpdater"/>
+    <fullyQualifiedTypeName name="java.security.MessageDigestSpi"/>
+    <fullyQualifiedTypeName name="java.security.MessageDigest"/>
+    <fullyQualifiedTypeName name="java.util.Base64"/>
+    <fullyQualifiedTypeName name="com.criptografia.modelo.repositorio.DaoUsuario"/>
+    <fullyQualifiedTypeName name="com.criptografia.modelo.entidad.Usuario"/>
 </qualifiedTypeNameHistroy>
